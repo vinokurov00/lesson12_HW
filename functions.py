@@ -13,3 +13,10 @@ def get_posts_by_keyword(keyword):
             result.append(post)
     return result
 
+
+def add_post(post):
+    posts = load_posts()
+    posts.append(post)
+    with open('posts.json', 'w', encoding='utf-8') as file:
+        json.dump(posts, file, ensure_ascii=False)
+    return post
